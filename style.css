@@ -1,0 +1,85 @@
+
+@media print {
+body {-webkit-print-color-adjust: exact;
+    print-color-adjust: exact}
+}
+html{
+    background-color: #EBEBEB;
+    font-size: medium;
+    margin: 20px;
+}
+h1 {
+    text-align: center;
+    font-size: 5rem;
+}
+table {
+    min-width: 300px;
+    font: 17px Calibri;
+    margin-bottom: 1rem;
+}
+table, th, td {
+    border: solid 1px black;
+    border-collapse: collapse;
+    padding: 5px 3px;
+    text-align: center;
+}
+#tableCalc #pcts{
+  max-width: min-content;
+}
+
+input {
+    border: 2px black solid;
+}
+#codigoPedido {
+    border: 1px black solid;
+    margin-bottom: 1rem;
+}
+#qtdPacotes, #select {
+    padding: 7px;
+    text-align: center;
+}
+button, #tableCalc button {
+    border: 1px black solid;
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #E8F16B;
+} 
+span {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+}
+p{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#tableDesc {
+    background-color: #E8F16B;
+}
+tfoot {
+    font-weight: bold;
+}
+#formAdcProduto {
+    display: none; 
+}
+#formAdcProduto input {
+    margin-bottom: 15px;
+    padding: 3px;
+}
+#footer {
+    position: relative;
+    top: 150px;
+    text-align: justify;
+    margin-top: 150px;
+    padding: 30px 15px;
+    border-top: 1px black dashed;
+}
+textarea {
+    text-transform: uppercase; 
+    border: 1px black solid;
+}
+#codigosCadastrados{
+    display: none;
+}

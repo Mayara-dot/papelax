@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>.:|PAPELAX|</title>
+  </head>
+  <header>
+	<h1>|PAPELAX|</h1>
+  </header>
+  <body>
+	<label for="codigo">Pedido de Venda Nº: </label>
+	<input type="text" id="codigoPedido" name="codigoPedido" required/>
+
+	<table id="tableDesc">
+	<thead>
+		<tr>
+			<th>Código do Produto</th>
+			<th>Quantidade de Pacotes</th>
+			<th>#</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<td>
+		<input name="select" id="select" placeholder="Código do Produto" onblur="setDescricao()"/>
+		</td>
+		
+		<td>
+		<input name="qtdPacotes" id="qtdPacotes" placeholder="Quantidade de Pacotes" 
+		type="number" required/>
+		</td>
+
+		<td>
+		<button onclick="createBodyTable()" id="button">Calcular</button>
+		</td>
+		</tr>
+	</tbody>
+	</table>
+	
+	
+	
+	<!--TABELA PARA CALCULO DE CAIXAS QUE SERÁ GERADA EM PDF-->
+	<div id="tableCalc">
+		<table>
+			<thead>
+			<tr>
+				<th>#</th>
+				<th>Código do Produto</th>
+				<th>Modelo do Produto</th>
+				<th id="pcts">Quantidade Solicitada(PCTS)</th>
+				<th>Quantidade de Caixas</th>
+			</tr>
+			</thead>
+			<tbody id="totTable">
+			<!--POPULAR TABELA EM JS-->
+			</tbody>
+			<tfoot>
+				<tr>
+					<th scope="row"> Total Caixas</th>
+					<td><div id="totCaixas">0</div></td>
+				<tr>
+			</tfoot>
+			</table>
+	</div>
+	
+	<button onclick="gerarPDF()">Criar PDF</button>
+	<br> <hr>
+	<p>O código digitado não foi encontrado? Cadastre no sistema!</p>
+	<button onclick="displayForm()">Cadastrar novo código</button>
+  <div id="formAdcProduto" >
+	<p>Informações Gerais</p>
+	<label for="codigo">Código do Produto</label>
+	<input type="text" name="codigoProd" id="codigoProd" required>
+	<br>
+	<label for="numPacotes">Número de Pacotes</label>
+	<input type="number" name="numPacotes" id="numPacotes" required>
+	<br>
+	<p>Descrição do Produto</p>
+	<textarea type="text" name="descricaoProd" id="descricaoProd"  rows="5" cols="50" required>
+	</textarea>
+	<div>EX.: BLOCO DE NOTAS ROSA - 20 PCTS C/ 50 UNIDS</div>
+	<br>
+	<label for="color1">Cor 1</label>
+	<input type="color" name="color1" id="color1">
+	<br>
+	<label for="color2">Cor 2</label>
+	<input type="color" name="color2" id="color2">
+	<br>
+	<button id="adcProduto" onclick="adcProduto()">Adicionar</button>
+  </div>
+  <hr>
+  <div>
+	<button  onclick="mostrarCódigos()">Listar códigos já cadastrados</button>
+	<ul id="codigosCadastrados"></ul>
+  </div>
+</body>
+  <footer>
+	<p id="footer">
+	Informe o código do produto, a quantidade de pacotes e clique 
+	no botão <u>Calcular</u> para realizar o cálculo de caixas, clique no botão <u>Criar PDF</u> para gerar tabela para impressão.
+	</p>
+  </footer>
+<script src="./data.js"  type="application/javascript"></script>
+<script src="./script.js"  type="application/javascript"></script>
+</html>
